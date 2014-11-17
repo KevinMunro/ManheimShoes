@@ -8,11 +8,11 @@ Feature: Display New Shoes
 
 
 	Scenario: View new releases of month
-	  Given I am on the Shoe Store website
+	  Given I'm on the Shoe Store website
 	  When I click on the <month> link
-	  Then each shoe should have a blurp
-	  And each shoe should have a picture
-	  And each shoe should have a suggested price
+	  Then I should see a blurb for each shoe
+	  And I should see a picture for each shoe
+	  And I should see a suggested price for each shoe
 
 	  Examples:
 	    | Month |
