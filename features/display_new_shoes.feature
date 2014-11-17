@@ -7,7 +7,7 @@ Feature: Display New Shoes
 	should have the ability to view shoes being released each month
 
 
-	Scenario: View new releases of month
+	Scenario Outline: View new releases of month
 	  Given I'm on the Shoe Store website
 	  When I click on the <month> link
 	  Then I should see a blurb for each shoe
@@ -15,7 +15,7 @@ Feature: Display New Shoes
 	  And I should see a suggested price for each shoe
 
 	  Examples:
-	    | Month |
+	    | month |
 	    | January |
 	    | February |
 	    | March |
