@@ -8,4 +8,9 @@ Feature: Submit Email
 	Scenario: Submit valid email address
 	  Given I am on the Shoe Store website
 	  When I submit a valid email address
-	  Then a confirmation message should appear
+	  Then I should see a confirmation message appear
+
+	Scenario: Submit invalid email address
+	  Given I am on the Shoe Store website
+	  When I submit an invalid email address
+	  Then I should not see a confirmation message appear
