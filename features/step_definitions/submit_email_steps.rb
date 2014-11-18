@@ -3,9 +3,9 @@ Given(/^I am on the Shoe Store website$/) do
 end
 
 When(/^I submit a valid email address$/) do
-  mail_field=find('#remind_email_input')
-  mail_field.set('mail@mail.com')
-  mail_field.first(:xpath,".//..").find("input[type='submit']").click
+  home_page.set_email('mail@mail.com')
+  home_page.get_email_submit_button().click
+  sleep(5)
 end
  
 Then(/^I should see a confirmation message appear$/) do
@@ -13,9 +13,9 @@ Then(/^I should see a confirmation message appear$/) do
 end
 
 When(/^I submit an invalid email address$/) do
-  mail_field=find('#remind_email_input')
-  mail_field.set('mail')
-  mail_field.first(:xpath,".//..").find("input[type='submit']").click
+  home_page.set_email('mail')
+  home_page.get_email_submit_button().click
+  sleep(5)
 end
  
 Then(/^I should not see a confirmation message appear$/) do

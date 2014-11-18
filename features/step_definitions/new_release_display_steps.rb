@@ -3,7 +3,7 @@ Given(/^I'm on the Shoe Store website$/) do
 end
  
 When(/^I click on the (\w+) link$/) do | month |
-  shoe_display_page.click_month_link(month)
+  navigation_bar.click_month_link(month)
 end
  
 Then(/^I should see a blurb for each shoe$/) do

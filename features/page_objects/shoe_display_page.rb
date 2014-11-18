@@ -1,9 +1,5 @@
 class ShoeDisplayPage < SitePrism::Page
 
-  def click_month_link(month)
-    click_link(month)
-  end
-
   def go_to_page()
     visit('http://shoestore-manheim.rhcloud.com/')
   end 
