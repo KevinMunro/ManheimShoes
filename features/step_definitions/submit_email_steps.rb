@@ -5,7 +5,6 @@ end
 When(/^I submit a valid email address$/) do
   home_page.set_email('mail@mail.com')
   home_page.get_email_submit_button().click
-  sleep(5)
 end
  
 Then(/^I should see a confirmation message appear$/) do
@@ -15,7 +14,6 @@ end
 When(/^I submit an invalid email address$/) do
   home_page.set_email('mail')
   home_page.get_email_submit_button().click
-  sleep(5)
 end
  
 Then(/^I should not see a confirmation message appear$/) do
