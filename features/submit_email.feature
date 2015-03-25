@@ -5,12 +5,22 @@ Feature: Submit Email
 	should have the ability to submit their email address.
 
 
-	Scenario: Submit valid email address
+	Scenario Outline: Submit valid email address
 	  Given I am on the Shoe Store website
-	  When I submit a valid email address
+	  When I submit <address> as the email address
 	  Then I should see a confirmation message appear
 
-	Scenario: Submit invalid email address
+          Examples:
+            |address|
+            |mail@mail.com|
+            |mail.user@mail.com|
+
+	Scenario Outline: Submit invalid email address
 	  Given I am on the Shoe Store website
-	  When I submit an invalid email address
+	  When I submit <address> as the email address
 	  Then I should not see a confirmation message appear
+
+          Examples:
+            |address|
+            |mail|
+            |@mail.com|

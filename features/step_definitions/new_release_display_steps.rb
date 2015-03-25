@@ -16,8 +16,7 @@ end
 And(/^I should see a picture for each shoe$/) do
   shoes = shoe_display_page.get_shoes()
   shoes.each do |shoe|
-    picture=shoe.find('td.shoe_image img')
-    picture['src'].should_not be_nil
+    shoe.assert_selector('td.shoe_image img', :count => 1)
   end
 end
 
